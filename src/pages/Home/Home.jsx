@@ -3,6 +3,7 @@ import './Home.css'
 import Header from '../../componants/Header/Header'
 import Exploremenu from '../../componants/exploremenu/Exploremenu'
 import Fooddisplay from '../../componants/Food-disply/Fooddisplay'
+import { Appdownload } from '../../componants/Appdownload/Appdownload'
 
 
 
@@ -14,6 +15,7 @@ import Fooddisplay from '../../componants/Food-disply/Fooddisplay'
         <Header/>
         <Exploremenu category={category} setcategory={setcategory} />
        <Fooddisplay category={category}/>
+       <Appdownload/>
     </div>
   )
 }

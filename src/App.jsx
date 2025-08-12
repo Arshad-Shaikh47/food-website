@@ -3,9 +3,9 @@ import Navbar from './componants/Navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Card from './pages/Card/Card'
-import Placeorder from './pages/Placeorder/Placeorder'
 import { Footer } from './componants/Footer/Footer'
 import Loginpopup from './componants/loginpopup/Loginpopup'
+import Placeorder from './pages/Placeorder/Placeorder'
 
 const App = () => {
 
@@ -24,7 +24,7 @@ const App = () => {
         path='/Card'
         element={<Card/>}/>
          <Route
-        path='/Placeorder'
+        path='/Order'
         element={<Placeorder/>}/>
       </Routes>
     </div>

@@ -1,9 +1,12 @@
 import React, { useContext, useState } from 'react'
 import './Card.css'
 import { Summit } from '../../context/Summit'
+import { useNavigate } from 'react-router-dom'
 const Card = () => {
 
   const {cardItems,food_list,removeFromCard, getTotalCardAmount} = useContext(Summit)
+
+ const navigate = useNavigate();
 
   return (
     <div className='Card'>
@@ -47,14 +50,14 @@ const Card = () => {
           <hr />
           <div className="card-total-details">
              <p>Delivery fee</p>
-            <p>${2}</p>
+            <p>${getTotalCardAmount()===0?0:2}</p>
           </div>
           <hr />
           <div className="card-total-details">
              <p>Total</p>
-            <p>${getTotalCardAmount()+2}</p>
+            <p>${getTotalCardAmount()===0?0:getTotalCardAmount()+2}</p>
           </div>
-          <button>PROCEED TO CHECKOUT</button>
+          <button onClick={()=>navigate('/Order')}>PROCEED TO CHECKOUT</button>
         </div>
           
        

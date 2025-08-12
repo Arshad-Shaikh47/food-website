@@ -23,9 +23,19 @@ export const SummitProvider = ({ children }) => {
     });
   };
 
- useEffect(()=>{
-  console.log(cardItems);
- },[cardItems])
+const getTotalCardAmount =() =>{
+    let totalAmout = 0; 
+    for(const item in cardItems)
+    {
+      if(cardItems[item] > 0){
+             
+       let itemInfo = food_list.find((product)=>product._id === item)
+       totalAmout += itemInfo.price* cardItems[item];
+          }
+       }
+      return totalAmout; 
+      
+}
 
 
   const contextValue = {
@@ -34,6 +44,7 @@ export const SummitProvider = ({ children }) => {
     setCardItems,
     addToCard,
     removeFromCard,
+    getTotalCardAmount,
   };
 
   return (

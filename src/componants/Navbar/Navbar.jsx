@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
 import  { Link } from 'react-router-dom'
+import { Summit } from '../../context/Summit'
 
 const Navbar = ({setShowLogin}) => {
   const [menu,setmenu] =useState("home");
+
+  const {getTotalCardAmount} = useContext(Summit)
   return (
     <div className='navbar'>
      <Link to='/'><img src={assets.logo} alt="" className='logo'/></Link> 
@@ -18,7 +21,7 @@ const Navbar = ({setShowLogin}) => {
         <img src={assets.search_icon} alt="" />
         <div className="navbar-search-icon">
           <Link to="/Card"><img src={assets.basket_icon} alt="" /></Link> 
-            <div className='dot'></div>
+            <div className={getTotalCardAmount()===0?"":"dot"}></div>
         </div>
         <button onClick={()=>setShowLogin(true)}>sing in </button>
       </div>

@@ -3,7 +3,7 @@ import './Card.css'
 import { Summit } from '../../context/Summit'
 const Card = () => {
 
-  const {cardItems,food_list,removeFromCard} = useContext(Summit)
+  const {cardItems,food_list,removeFromCard, getTotalCardAmount} = useContext(Summit)
 
   return (
     <div className='Card'>
@@ -42,28 +42,32 @@ const Card = () => {
           <h2>Cart totals</h2>
           <div className="card-total-details">
             <p>Subtotal</p>
-            <p>{0}</p>
+            <p>${getTotalCardAmount()}</p>
           </div>
           <hr />
           <div className="card-total-details">
              <p>Delivery fee</p>
-            <p>{2}</p>
+            <p>${2}</p>
           </div>
           <hr />
           <div className="card-total-details">
              <p>Total</p>
-            <p>{0}</p>
+            <p>${getTotalCardAmount()+2}</p>
           </div>
-           <button>PROCEED TO CHECKOUT</button>
+          <button>PROCEED TO CHECKOUT</button>
         </div>
-         
-       </div>
+          
+       
        <div className="card-promocode">
-        <p>If you have a promo code , Enter it here</p>
-        <div className='card-promocode-input'>
-          <input type="text" placeholder='promo code' />
+        <div>
+            <p>If you have a promo code , Enter it here</p>
+         <div className='card-promocode-input'>
+            <input type="text" placeholder='promo code' />
           <button>Submit</button>
         </div>
+        </div>
+       </div>
+       
        </div>
     </div>
   )

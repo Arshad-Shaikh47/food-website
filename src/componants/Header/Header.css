@@ -1,9 +1,17 @@
 .header{
     height: 34vw;
     margin: 30px auto;
-    background: url('./header.jpg') no-repeat;
+    background: no-repeat;
     background-size: contain;
     position: relative;
+}
+
+.header img{
+     height: 34vw;
+     background: no-repeat;
+    background-size: contain;
+    position: relative;
+    z-index: -1;
 }
 
 .header-contents{
@@ -15,6 +23,7 @@
     max-width: 50%;
     bottom: 10%;
     left: 6vw;
+    z-index: 1;
     animation: fadeIn 3s;
 }
 

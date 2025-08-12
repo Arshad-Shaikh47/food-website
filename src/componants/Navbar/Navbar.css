@@ -108,4 +108,11 @@
        display: none;
     }
    
+   
+}
+
+@media screen and (max-width:375px) {
+     .navbar .logo{
+        width: 84px;
+    }
 }
